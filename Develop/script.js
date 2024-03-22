@@ -7,13 +7,13 @@ const collectEmployees = function(employeesArray) {
   const employees = [];
   let addEmployee = true;
   while (addEmployee) {
-    const firsName = prompt('Employee first name:');
+    const firstName = prompt('Employee first name:');
     const lastName = prompt('Employee last name:');
     let salary = prompt('Salary of employee:');
     salary = isNaN(parseInt(salary)) ? 0 : parseInt(salary);
     
     const employee = {
-      firstName: firsName,
+      firstName: firstName,
       lastName: lastName,
       salary: salary
 };
@@ -25,6 +25,9 @@ addEmployee = confirm('DO you wish to add another employee?');
 return employees;
 };
 
+const employeeArray = collectEmployees([]);
+
+console.log(employeeArray);
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
