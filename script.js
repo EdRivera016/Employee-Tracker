@@ -17,22 +17,28 @@ const collectEmployees = function(employeesArray) {
       lastName: lastName,
       salary: salary
 };
-
 employees.push(employee);
 
 addEmployee = confirm('DO you wish to add another employee?');
 }
 return employees;
 };
-
 const employeeArray = collectEmployees([]);
 
 console.log(employeeArray);
 
+
+
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-}
+  let totalSalary = 0;
+  employeesArray.forEach(employee => {
+    totalSalary += employee.salary;
+  });
+  const averageSalary = totalSalary / employeesArray.length;
+  console.log(`Average Salary:$${averageSalary.toFixed(2)}| Numbers of Employees: ${employeesArray.length}`);
+};
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
