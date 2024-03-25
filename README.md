@@ -32,12 +32,14 @@ THEN my employee data is displayed on the page sorted alphabetically by last nam
 
 ## Comments
 
-*
-*
-*
-*
-*
-*
+* Changed the reference to a getElementById
+* Added a function to collect employee data and creat an array of employees.
+* Did a while loop to continue prompting the input bar until user decides to stop.
+* Used a NaN to default to 0 when it's not a valid number.
+* Added a function to calculate and display average salary.
+* Added a function to select and display a random employee
+
+
 
 ## Deployed Page
 
