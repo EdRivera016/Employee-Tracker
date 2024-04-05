@@ -2,7 +2,7 @@
 const addEmployeesBtn = document.getElementById("add-employees-btn");
 
 const collectEmployees = function() {
-  const employeesArray = [];
+  const employees = [];
 
   let addEmployee = true;
 
@@ -22,20 +22,35 @@ const collectEmployees = function() {
       };
 
       // Add the employee object to the employeesArray
-      employeesArray.push(employee);
+      employees.push(employee);
 
       // Ask the user if they want to add another employee
       addEmployee = confirm("Do you want to add another employee?");
-  }
 
-  return employeesArray;
+  }
+  return employees;
 };
 
 // Call the collectEmployees function to start collecting employee data
 const employeesData = collectEmployees();
 console.log(employeesData); // Output the array of employee objects
   
-const displayAverageSalary = function(employeesArray) {
+// Function to display employee data in an HTML table
+const displayEmployees = (function(employee) {
+const tableBody = document.getElementById("employee-table-body");
+tableBody.innerHTML = "";
+
+employees.forEach(function(employee) {
+  const row = tableBody.insertRow();
+
+  const firstNameCell = row.insertCell();
+  
+})
+});
+
+
+
+const displayAverageSalary = function(employees) {
   let totalSalary = 0;
 
   // Calculate total salary
@@ -44,18 +59,18 @@ const displayAverageSalary = function(employeesArray) {
   });
 
   // Calculate average salary
-  const averageSalary = totalSalary / employeesArray.length;
+  const averageSalary = totalSalary / employees.length;
 
   console.log(`Average Salary: $${averageSalary.toFixed(2)}`);
-  console.log(`Number of Employees: ${employeesArray.length}`);
+  console.log(`Number of Employees: ${employees.length}`);
 };
 
-const getRandomEmployee = function(employeesArray) {
+const getRandomEmployee = function(employees) {
   // Generate a random index within the range of the array length
-  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  const randomIndex = Math.floor(Math.random() * employees.length);
 
   // Retrieve the random employee at the random index
-  const randomEmployee = employeesArray[randomIndex];
+  const randomEmployee = employees[randomIndex];
 
   console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
 };
